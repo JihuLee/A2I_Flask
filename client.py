@@ -3,8 +3,8 @@ import requests
 import json
 import cv2
 
-addr = 'http://localhost:5000'
-test_url = addr + '/api/test'
+addr = 'http://localhost:5000/test'
+test_url = addr
 
 # prepare headers for http request
 content_type = 'image/jpeg'

@@ -7,12 +7,12 @@ import cv2
 app = Flask(__name__)
 
 # route http posts to this method
-@app.route('/', methods=['POST'])
+@app.route('/test', methods=['POST'])
 def test():
     r = request
     
     # convert string of image data to uint8
-    nparr = np.fromstring(r.data, np.unit8)
+    nparr = np.fromstring(r.data, np.uint8)
     
     # decode image
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
@@ -25,7 +25,7 @@ def test():
     # encode response using jsonpickle
     response_pickled = jsonpickle.encode(response)
     
-    return Response(response=response_pickled, status-200, mimetype="application/json")
+    return Response(response=response_pickled, status=200, mimetype="application/json")
 
 # start flask app
-app.run(host="0.0.0.0", port=5000)
+app.run(debug=True, port=5000)
