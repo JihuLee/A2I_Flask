@@ -28,4 +28,6 @@ def test():
     return Response(response=response_pickled, status=200, mimetype="application/json")
 
 # start flask app
-app.run(debug=True, port=5000)
+app.run(debug=True,
+        host="192.168.56.20", 
+        port=5000)

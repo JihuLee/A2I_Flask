@@ -1,7 +1,7 @@
 import requests
 import base64
 
-URL = "http://localhost:5000/add_face"
+URL = "http://localhost:5000/hololens"
 
 with open("lena.png", "rb") as imageFile:
     img = base64.b64encode(imageFile.read())
